@@ -9,6 +9,11 @@ Two seeds are kept apart:
 Convergence, the cap and which checkpoint is measured follow docs/metrics.md
 sections 5 and 6.
 
+Learning rate: linear warmup from 0 over `warmup_epochs`, then cosine decay to
+`min_lr_ratio * lr` at `max_epochs`. The schedule spans the full cap, so it is
+identical for every run in a sweep; a run that reaches the target early stops
+partway down the decay.
+
 Example:
     python src/train.py --N 1000 --V 100 --d_model 32 --init_seed 0 --data_seed 0
 """
@@ -45,19 +50,39 @@ class TrainConfig:
     dropout: float = 0.0
     tie_weights: bool = True
     # optimization
-    lr: float = 1e-3
+    lr: float = 1e-3  # peak learning rate, reached at the end of warmup
+    warmup_epochs: int = 5
+    min_lr_ratio: float = 0.1  # final learning rate as a fraction of lr
     weight_decay: float = 0.0
     batch_size: int = 64
     # convergence
     target_recall: float = 0.99
-    max_epochs: int = 75
-    device: str = "cpu"
+    max_epochs: int = 200
+    device: str = "auto"  # "auto" picks cuda, then xpu, then cpu
+
+
+def resolve_device(name: str) -> torch.device:
+    if name != "auto":
+        return torch.device(name)
+    if torch.cuda.is_available():
+        return torch.device("cuda")
+    if hasattr(torch, "xpu") and torch.xpu.is_available():
+        return torch.device("xpu")
+    return torch.device("cpu")
+
+
+def lr_multiplier(step: int, warmup_steps: int, total_steps: int, min_lr_ratio: float) -> float:
+    """Factor on the peak learning rate at optimizer step `step` (0-based)."""
+    if step < warmup_steps:
+        return (step + 1) / warmup_steps
+    progress = min(1.0, (step - warmup_steps) / max(1, total_steps - warmup_steps))
+    return min_lr_ratio + (1 - min_lr_ratio) * 0.5 * (1 + math.cos(math.pi * progress))
 
 
 def train(cfg: TrainConfig, verbose: bool = False) -> dict:
     # warn_only: a few CUDA ops have no deterministic implementation.
     torch.use_deterministic_algorithms(True, warn_only=True)
-    device = torch.device(cfg.device)
+    device = resolve_device(cfg.device)
 
     dataset = make_facts(cfg.N, cfg.V, cfg.data_seed, key_len=cfg.key_len)
     tokenizer = CharTokenizer(dataset.chars)
@@ -80,9 +105,16 @@ def train(cfg: TrainConfig, verbose: bool = False) -> dict:
     ).to(device)
     num_params, num_params_non_embedding = count_params(model)
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg.lr, weight_decay=cfg.weight_decay)
+    steps_per_epoch = math.ceil(cfg.N / cfg.batch_size)
+    scheduler = torch.optim.lr_scheduler.LambdaLR(
+        optimizer,
+        lambda step: lr_multiplier(
+            step, cfg.warmup_epochs * steps_per_epoch, cfg.max_epochs * steps_per_epoch, cfg.min_lr_ratio
+        ),
+    )
 
     def measure(epoch: int, train_loss_bits: float | None) -> dict:
-        row = {"epoch": epoch, "train_loss_bits": train_loss_bits}
+        row = {"epoch": epoch, "train_loss_bits": train_loss_bits, "lr": optimizer.param_groups[0]["lr"]}
         row.update(evaluate(model, tokens, prompt_len, cfg.V))
         if verbose:
             print(
@@ -107,6 +139,7 @@ def train(cfg: TrainConfig, verbose: bool = False) -> dict:
             optimizer.zero_grad(set_to_none=True)
             nll.mean().backward()
             optimizer.step()
+            scheduler.step()
             loss_nats += nll.detach().sum().item()
 
         history.append(measure(epoch, loss_nats / cfg.N / math.log(2)))
@@ -119,6 +152,7 @@ def train(cfg: TrainConfig, verbose: bool = False) -> dict:
     fresh_eval = evaluate(model, encode_facts(fresh, tokenizer, device), prompt_len, cfg.V)
     return {
         "config": asdict(cfg),
+        "device": str(device),
         "num_params": num_params,
         "num_params_non_embedding": num_params_non_embedding,
         "max_bits": dataset.max_bits,

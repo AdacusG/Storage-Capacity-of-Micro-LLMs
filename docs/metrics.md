@@ -110,7 +110,7 @@ Training time metrics need a target and a cap, defined per sweep in its config.
 
 \- \*\*Target\*\*: reached when training recall accuracy >= `target\_recall` (default 0.99), evaluated every epoch.
 
-\- \*\*Cap\*\*: maximum epochs (default 75, matching the pilot runs).
+\- \*\*Cap\*\*: maximum epochs (default 200). The learning-rate schedule (linear warmup, then cosine decay) spans the full cap, so changing the cap changes the schedule too. Keep it fixed within a sweep.
 
 \- \*\*Success\*\*: target reached before the cap.
 
@@ -181,4 +181,6 @@ Per-token loss is not comparable across tokenizations. Use total bits per fact (
 
 
 v0.1: initial definition.
+
+v0.2: default cap raised from 75 to 200 epochs.
 
