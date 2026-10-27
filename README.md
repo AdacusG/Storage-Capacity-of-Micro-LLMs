@@ -107,7 +107,7 @@ Varying one while fixing the other shows which source drives the variance.
 - [X] Define the bits-stored estimator and document it in `docs/metrics.md`
 - [X] Implement synthetic data generator
 - [X] Implement micro-transformer and training loop with separate init/data seeds
-- [ ] Pilot sweep: capacity vs. model size (3 seeds) to locate the edge
+- [X] Pilot sweep: capacity vs. model size (3 seeds) to locate the edge
 - [ ] Full sweep: 10+ seeds at sizes around the edge
 - [ ] Exposure and dataset-size studies
 - [ ] Tokenization comparison
