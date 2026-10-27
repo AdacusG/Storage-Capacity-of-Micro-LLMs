@@ -1,0 +1,28 @@
+{
+  "name": "pilot_size",
+  "description": "Pilot: capacity vs. model size at fixed N, 3 seeds, to locate the edge. N=10000, V=676 gives ~94k bits; at ~2 bits/param the edge is expected near 47k params.",
+  "base": {
+    "N": 10000,
+    "V": 676,
+    "n_layer": 2,
+    "n_head": 2,
+    "max_epochs": 200,
+    "target_recall": 0.99
+  },
+  "grid": {
+    "d_model": [
+      16,
+      24,
+      32,
+      48,
+      64,
+      96
+    ]
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "seed_mode": "tied"
+}

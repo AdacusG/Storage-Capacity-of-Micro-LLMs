@@ -1,0 +1,174 @@
+epoch   0  recall 0.0000  bits 0.0 / 94008.8
+epoch   1  recall 0.0009  bits 0.0 / 94008.8
+epoch   2  recall 0.0015  bits 0.0 / 94008.8
+epoch   3  recall 0.0013  bits 0.0 / 94008.8
+epoch   4  recall 0.0015  bits 0.0 / 94008.8
+epoch   5  recall 0.0017  bits 13.9 / 94008.8
+epoch   6  recall 0.0018  bits 30.1 / 94008.8
+epoch   7  recall 0.0022  bits 166.9 / 94008.8
+epoch   8  recall 0.0018  bits 124.8 / 94008.8
+epoch   9  recall 0.0016  bits 213.3 / 94008.8
+epoch  10  recall 0.0020  bits 353.7 / 94008.8
+epoch  11  recall 0.0018  bits 478.0 / 94008.8
+epoch  12  recall 0.0027  bits 462.5 / 94008.8
+epoch  13  recall 0.0032  bits 712.2 / 94008.8
+epoch  14  recall 0.0044  bits 873.0 / 94008.8
+epoch  15  recall 0.0031  bits 1007.3 / 94008.8
+epoch  16  recall 0.0031  bits 1161.5 / 94008.8
+epoch  17  recall 0.0049  bits 1221.8 / 94008.8
+epoch  18  recall 0.0049  bits 1559.4 / 94008.8
+epoch  19  recall 0.0050  bits 1735.5 / 94008.8
+epoch  20  recall 0.0055  bits 1953.1 / 94008.8
+epoch  21  recall 0.0062  bits 2094.6 / 94008.8
+epoch  22  recall 0.0070  bits 2331.5 / 94008.8
+epoch  23  recall 0.0074  bits 2473.7 / 94008.8
+epoch  24  recall 0.0060  bits 2670.4 / 94008.8
+epoch  25  recall 0.0072  bits 2985.2 / 94008.8
+epoch  26  recall 0.0081  bits 3409.3 / 94008.8
+epoch  27  recall 0.0074  bits 3686.5 / 94008.8
+epoch  28  recall 0.0076  bits 4019.9 / 94008.8
+epoch  29  recall 0.0091  bits 4497.2 / 94008.8
+epoch  30  recall 0.0099  bits 4617.2 / 94008.8
+epoch  31  recall 0.0131  bits 5283.1 / 94008.8
+epoch  32  recall 0.0130  bits 5663.1 / 94008.8
+epoch  33  recall 0.0117  bits 5816.3 / 94008.8
+epoch  34  recall 0.0141  bits 6586.0 / 94008.8
+epoch  35  recall 0.0169  bits 7139.2 / 94008.8
+epoch  36  recall 0.0180  bits 7561.1 / 94008.8
+epoch  37  recall 0.0179  bits 7995.0 / 94008.8
+epoch  38  recall 0.0208  bits 8982.8 / 94008.8
+epoch  39  recall 0.0186  bits 9343.4 / 94008.8
+epoch  40  recall 0.0246  bits 10366.1 / 94008.8
+epoch  41  recall 0.0282  bits 11196.5 / 94008.8
+epoch  42  recall 0.0286  bits 12061.6 / 94008.8
+epoch  43  recall 0.0363  bits 13051.1 / 94008.8
+epoch  44  recall 0.0356  bits 13657.2 / 94008.8
+epoch  45  recall 0.0379  bits 14634.7 / 94008.8
+epoch  46  recall 0.0441  bits 15577.2 / 94008.8
+epoch  47  recall 0.0487  bits 16373.9 / 94008.8
+epoch  48  recall 0.0553  bits 17981.8 / 94008.8
+epoch  49  recall 0.0589  bits 18678.6 / 94008.8
+epoch  50  recall 0.0619  bits 19386.0 / 94008.8
+epoch  51  recall 0.0701  bits 20637.2 / 94008.8
+epoch  52  recall 0.0740  bits 21850.1 / 94008.8
+epoch  53  recall 0.0791  bits 22786.1 / 94008.8
+epoch  54  recall 0.0864  bits 24602.3 / 94008.8
+epoch  55  recall 0.0877  bits 24776.5 / 94008.8
+epoch  56  recall 0.1018  bits 26640.2 / 94008.8
+epoch  57  recall 0.1086  bits 27467.4 / 94008.8
+epoch  58  recall 0.1138  bits 28788.4 / 94008.8
+epoch  59  recall 0.1229  bits 30147.0 / 94008.8
+epoch  60  recall 0.1306  bits 30796.1 / 94008.8
+epoch  61  recall 0.1462  bits 32724.9 / 94008.8
+epoch  62  recall 0.1562  bits 33839.0 / 94008.8
+epoch  63  recall 0.1579  bits 34812.7 / 94008.8
+epoch  64  recall 0.1744  bits 36768.1 / 94008.8
+epoch  65  recall 0.1785  bits 37172.1 / 94008.8
+epoch  66  recall 0.1879  bits 38594.6 / 94008.8
+epoch  67  recall 0.1969  bits 39077.5 / 94008.8
+epoch  68  recall 0.2155  bits 41188.0 / 94008.8
+epoch  69  recall 0.2254  bits 42184.0 / 94008.8
+epoch  70  recall 0.2371  bits 43916.1 / 94008.8
+epoch  71  recall 0.2387  bits 44084.1 / 94008.8
+epoch  72  recall 0.2548  bits 45516.2 / 94008.8
+epoch  73  recall 0.2818  bits 47352.8 / 94008.8
+epoch  74  recall 0.2907  bits 48628.6 / 94008.8
+epoch  75  recall 0.3013  bits 49378.6 / 94008.8
+epoch  76  recall 0.3082  bits 50510.8 / 94008.8
+epoch  77  recall 0.3304  bits 51584.9 / 94008.8
+epoch  78  recall 0.3427  bits 52729.6 / 94008.8
+epoch  79  recall 0.3667  bits 54496.1 / 94008.8
+epoch  80  recall 0.3738  bits 55326.9 / 94008.8
+epoch  81  recall 0.3617  bits 54858.9 / 94008.8
+epoch  82  recall 0.3961  bits 57234.5 / 94008.8
+epoch  83  recall 0.4175  bits 58701.8 / 94008.8
+epoch  84  recall 0.4228  bits 59343.3 / 94008.8
+epoch  85  recall 0.4457  bits 60761.2 / 94008.8
+epoch  86  recall 0.4466  bits 61295.6 / 94008.8
+epoch  87  recall 0.4526  bits 61435.2 / 94008.8
+epoch  88  recall 0.4685  bits 62587.1 / 94008.8
+epoch  89  recall 0.5002  bits 63982.2 / 94008.8
+epoch  90  recall 0.4927  bits 64202.7 / 94008.8
+epoch  91  recall 0.5220  bits 65721.3 / 94008.8
+epoch  92  recall 0.5255  bits 66074.4 / 94008.8
+epoch  93  recall 0.5300  bits 66656.8 / 94008.8
+epoch  94  recall 0.5642  bits 68000.4 / 94008.8
+epoch  95  recall 0.5710  bits 68795.9 / 94008.8
+epoch  96  recall 0.5616  bits 68500.0 / 94008.8
+epoch  97  recall 0.5944  bits 70250.5 / 94008.8
+epoch  98  recall 0.5993  bits 70593.0 / 94008.8
+epoch  99  recall 0.6118  bits 71239.1 / 94008.8
+epoch 100  recall 0.6026  bits 71229.7 / 94008.8
+epoch 101  recall 0.6326  bits 72534.7 / 94008.8
+epoch 102  recall 0.6474  bits 73235.0 / 94008.8
+epoch 103  recall 0.6575  bits 73903.6 / 94008.8
+epoch 104  recall 0.6746  bits 74913.0 / 94008.8
+epoch 105  recall 0.6681  bits 74659.1 / 94008.8
+epoch 106  recall 0.6785  bits 75339.2 / 94008.8
+epoch 107  recall 0.6829  bits 75726.7 / 94008.8
+epoch 108  recall 0.7079  bits 76967.9 / 94008.8
+epoch 109  recall 0.7222  bits 77737.6 / 94008.8
+epoch 110  recall 0.7268  bits 77774.1 / 94008.8
+epoch 111  recall 0.7367  bits 78380.1 / 94008.8
+epoch 112  recall 0.7572  bits 79265.8 / 94008.8
+epoch 113  recall 0.7537  bits 79422.8 / 94008.8
+epoch 114  recall 0.7572  bits 79573.2 / 94008.8
+epoch 115  recall 0.7766  bits 80668.1 / 94008.8
+epoch 116  recall 0.7756  bits 80727.9 / 94008.8
+epoch 117  recall 0.7824  bits 81088.0 / 94008.8
+epoch 118  recall 0.7847  bits 81210.2 / 94008.8
+epoch 119  recall 0.8036  bits 82070.8 / 94008.8
+epoch 120  recall 0.8074  bits 82362.0 / 94008.8
+epoch 121  recall 0.8271  bits 83145.7 / 94008.8
+epoch 122  recall 0.8342  bits 83661.2 / 94008.8
+epoch 123  recall 0.8288  bits 83455.2 / 94008.8
+epoch 124  recall 0.8427  bits 84191.8 / 94008.8
+epoch 125  recall 0.8401  bits 84223.6 / 94008.8
+epoch 126  recall 0.8445  bits 84455.3 / 94008.8
+epoch 127  recall 0.8489  bits 84644.7 / 94008.8
+epoch 128  recall 0.8682  bits 85358.1 / 94008.8
+epoch 129  recall 0.8791  bits 85979.3 / 94008.8
+epoch 130  recall 0.8814  bits 86159.2 / 94008.8
+epoch 131  recall 0.8970  bits 86800.6 / 94008.8
+epoch 132  recall 0.9058  bits 87265.6 / 94008.8
+epoch 133  recall 0.9179  bits 87866.7 / 94008.8
+epoch 134  recall 0.9177  bits 87905.7 / 94008.8
+epoch 135  recall 0.9154  bits 87910.8 / 94008.8
+epoch 136  recall 0.9094  bits 87665.4 / 94008.8
+epoch 137  recall 0.9265  bits 88360.8 / 94008.8
+epoch 138  recall 0.9316  bits 88742.8 / 94008.8
+epoch 139  recall 0.9346  bits 88899.3 / 94008.8
+epoch 140  recall 0.9417  bits 89130.6 / 94008.8
+epoch 141  recall 0.9533  bits 89798.8 / 94008.8
+epoch 142  recall 0.9604  bits 90199.4 / 94008.8
+epoch 143  recall 0.9637  bits 90375.6 / 94008.8
+epoch 144  recall 0.9632  bits 90377.7 / 94008.8
+epoch 145  recall 0.9632  bits 90402.6 / 94008.8
+epoch 146  recall 0.9510  bits 89880.5 / 94008.8
+epoch 147  recall 0.9652  bits 90612.2 / 94008.8
+epoch 148  recall 0.9773  bits 91230.6 / 94008.8
+epoch 149  recall 0.9790  bits 91367.5 / 94008.8
+epoch 150  recall 0.9649  bits 90695.3 / 94008.8
+epoch 151  recall 0.9758  bits 91195.1 / 94008.8
+epoch 152  recall 0.9839  bits 91778.7 / 94008.8
+epoch 153  recall 0.9877  bits 92035.2 / 94008.8
+epoch 154  recall 0.9908  bits 92294.0 / 94008.8
+{
+  "device": "cuda",
+  "num_params": 102464,
+  "num_params_non_embedding": 100096,
+  "max_bits": 94008.79436282183,
+  "success": true,
+  "epochs_to_target": 154,
+  "epochs_run": 154,
+  "recall": 0.9908,
+  "nll_bits": 1714.8151861967574,
+  "bits_stored": 92293.97917662507,
+  "bytes_stored": 11536.747397078134,
+  "bits_per_param": 0.9007454245064127,
+  "fraction_of_max": 0.9817589918281632,
+  "best_bits_stored": 92293.97917662507,
+  "fresh_bits_stored": 0.0,
+  "fresh_nll_bits": 392868.4632480037,
+  "train_seconds": 104.48358964920044
+}
