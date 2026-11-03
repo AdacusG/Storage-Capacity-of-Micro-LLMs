@@ -1,0 +1,18 @@
+{
+  "name": "sanity_shuffle",
+  "description": "Sanity check from docs/metrics.md section 7: permute values across keys, then train. Same settings and seeds as d_model 32 in pilot_size_cap1000, which is the unshuffled baseline.",
+  "base": {
+    "N": 10000,
+    "V": 676,
+    "n_layer": 2,
+    "n_head": 2,
+    "max_epochs": 1000,
+    "target_recall": 0.99,
+    "shuffle_seed": 100
+  },
+  "grid": {
+    "d_model": [32]
+  },
+  "seeds": [0, 1, 2],
+  "seed_mode": "tied"
+}

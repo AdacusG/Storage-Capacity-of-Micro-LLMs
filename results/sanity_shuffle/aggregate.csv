@@ -1,0 +1,2 @@
+d_model,num_params,seeds,max_bits,bits_mean,bits_std,bits_min,bits_max,bits_per_param_mean,recall_mean,success_rate,success_ci_low,success_ci_high,epochs_to_target,fresh_bits_max
+32,26656,3,94008.79436282183,62308.30660126837,795.2055694924735,61490.10031920705,63078.31936775725,2.3374964961460223,0.48036666666666666,0.0,0.0,0.5615060804490177,cap cap cap,0.0
