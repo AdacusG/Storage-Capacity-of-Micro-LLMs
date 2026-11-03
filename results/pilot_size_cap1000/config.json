@@ -1,0 +1,26 @@
+{
+  "name": "pilot_size_cap1000",
+  "description": "Pilot rerun with a 1000-epoch cap, capacity-limited sizes only (d_model 64/96 already memorize everything at 200). Checks whether bits/param plateaus near 2 at small sizes. N=10000, V=676 gives ~94k bits.",
+  "base": {
+    "N": 10000,
+    "V": 676,
+    "n_layer": 2,
+    "n_head": 2,
+    "max_epochs": 1000,
+    "target_recall": 0.99
+  },
+  "grid": {
+    "d_model": [
+      16,
+      24,
+      32,
+      48
+    ]
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "seed_mode": "tied"
+}
