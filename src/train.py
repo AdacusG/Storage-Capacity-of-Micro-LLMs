@@ -27,7 +27,7 @@ from pathlib import Path
 
 import torch
 
-from data import DEFAULT_KEY_LEN, make_facts, make_fresh_facts
+from data import DEFAULT_KEY_LEN, make_facts, make_fresh_facts, shuffle_values
 from eval import encode_facts, evaluate, per_fact_nll
 from model import MicroTransformer, ModelConfig, count_params
 from tokenizers import CharTokenizer
@@ -42,6 +42,7 @@ class TrainConfig:
     # seeds
     init_seed: int = 0
     data_seed: int = 0
+    shuffle_seed: int = -1  # >= 0: permute values across keys (metrics.md section 7)
     # model
     n_layer: int = 2
     n_head: int = 2
@@ -85,6 +86,8 @@ def train(cfg: TrainConfig, verbose: bool = False) -> dict:
     device = resolve_device(cfg.device)
 
     dataset = make_facts(cfg.N, cfg.V, cfg.data_seed, key_len=cfg.key_len)
+    if cfg.shuffle_seed >= 0:
+        dataset = shuffle_values(dataset, cfg.shuffle_seed)
     tokenizer = CharTokenizer(dataset.chars)
     tokens = encode_facts(dataset, tokenizer, device)
     prompt_len = len(tokenizer.encode(dataset[0].prompt))

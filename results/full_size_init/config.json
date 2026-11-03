@@ -1,0 +1,35 @@
+{
+  "name": "full_size_init",
+  "description": "Full sweep around the 1000-epoch edge (between d_model 32 and 48), plus d_model 24 as a capacity-limited anchor. 10 seeds, seed_mode init: data_seed fixed, init_seed varies. N=10000, V=676 gives ~94k bits.",
+  "base": {
+    "N": 10000,
+    "V": 676,
+    "n_layer": 2,
+    "n_head": 2,
+    "max_epochs": 1000,
+    "target_recall": 0.99
+  },
+  "grid": {
+    "d_model": [
+      24,
+      32,
+      36,
+      40,
+      44,
+      48
+    ]
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "seed_mode": "init"
+}

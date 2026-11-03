@@ -108,7 +108,7 @@ Varying one while fixing the other shows which source drives the variance.
 - [X] Implement synthetic data generator
 - [X] Implement micro-transformer and training loop with separate init/data seeds
 - [X] Pilot sweep: capacity vs. model size (3 seeds) to locate the edge
-- [ ] Full sweep: 10+ seeds at sizes around the edge
+- [X] Full sweep: 10+ seeds at sizes around the edge
 - [ ] Exposure and dataset-size studies
 - [ ] Tokenization comparison
 - [ ] Write-up and figures
